@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 9000;
+
 var company = "AvraTech Node-site";
 
 var app = express();
@@ -18,8 +20,8 @@ hbs.registerHelper('screamIt', (text) => {
 
 app.set('view_engine', 'hbs');
 
-app.listen(9000, ()=>{
-    console.log('Webserver is up and listening @ 9000');
+app.listen(port, ()=>{
+    console.log(`Webserver is up and listening @ ${port}`);
 });
 
 // app.use((req, res, next) => {
